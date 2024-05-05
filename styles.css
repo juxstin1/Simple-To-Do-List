@@ -1,0 +1,182 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 20px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #121212, #333, #121212);
+  background-size: 600% 600%;
+  animation: AnimatedGradient 15s ease infinite;
+}
+
+@keyframes AnimatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  color: #bdbdbd;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 300px;
+  margin-right: 10px;
+  background-color: #333;
+  color: #fff;
+  outline: none;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #757575;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #bdbdbd;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+input[type="range"]:hover {
+  opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #e0e0e0;
+}
+
+button {
+  padding: 10px;
+  width: 110px; /* Set a fixed width for uniform size */
+  border: none;
+  background-color: #424242;
+  color: white;
+  cursor: pointer;
+  font-size: small;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background-color: #616161;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+li {
+  list-style: none;
+  margin-top: 10px;
+  background-color: #252525;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.priority-icon {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.cursor-light {
+  pointer-events: none;
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  margin-left: -75px; /* Centers the light on the cursor */
+  margin-top: -75px; /* Centers the light on the cursor */
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 80%
+  );
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+  animation: pulsate 2s infinite ease-in-out;
+  mix-blend-mode: lighten;
+  z-index: 9999;
+}
+
+@keyframes pulsate {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.click-effect {
+  pointer-events: none;
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid #fff;
+  animation: clickAnim 0.5s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+  z-index: 10000;
+}
+
+@keyframes clickAnim {
+  0% {
+    width: 5px;
+    height: 5px;
+    opacity: 1;
+    border: 3px solid rgba(255, 105, 180, 0.75);
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    border: none;
+    background: radial-gradient(
+      circle,
+      transparent,
+      transparent 40%,
+      rgba(255, 105, 180, 0.4),
+      rgba(255, 20, 147, 0.3) 60%,
+      transparent 70%
+    );
+  }
+}
